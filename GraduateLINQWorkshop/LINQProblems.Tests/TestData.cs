@@ -7,7 +7,7 @@ namespace LINQProblems.Tests
     {
         public static List<Person> NoPeople { get; } = new List<Person>();
 
-        public static List<Person> SinglePerson { get; } = new List<Person>
+        public static List<Person> AbbySmith { get; } = new List<Person>
         {
             new Person("Abby", "Smith", new List<string> { "Olivia" }, new DateTime(1990, 1, 5), 29, Colour.Blue, "Leeds")
         };

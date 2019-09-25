@@ -10,6 +10,8 @@ namespace LINQProblems
             throw new NotImplementedException();
         }
 
+        // This is an inclusive older than, e.g. someone with an age of 18 counts as being older
+        // than a specified age of 18
         public static List<Person> GetPeopleOlderThan(List<Person> people, int age)
         {
             throw new NotImplementedException();

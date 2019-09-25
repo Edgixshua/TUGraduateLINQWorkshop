@@ -5,17 +5,12 @@ namespace LINQProblems
 {
     public static class BasicLinq
     {
-        public static List<string> GetNamesOfPeople(List<Person> people)
+        public static List<string> GetFirstNamesOfPeople(List<Person> people)
         {
             throw new NotImplementedException();
         }
 
         public static List<Person> GetPeopleOlderThan(List<Person> people, int age)
-        {
-            throw new NotImplementedException();
-        }
-
-        public static int CalculateNumberOfPeople(List<Person> people)
         {
             throw new NotImplementedException();
         }

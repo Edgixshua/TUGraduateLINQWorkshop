@@ -1,21 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace LINQProblems
 {
     public static class BasicLinq
     {
-        public static List<string> GetNamesOfPeople(List<Person> people)
+        public static List<string> GetFirstNamesOfPeople(List<Person> people)
         {
             throw new NotImplementedException();
         }
 
+        // This is an inclusive older than, e.g. someone with an age of 18 counts as being older
+        // than a specified age of 18
         public static List<Person> GetPeopleOlderThan(List<Person> people, int age)
-        {
-            throw new NotImplementedException();
-        }
-
-        public static int CalculateNumberOfPeople(List<Person> people)
         {
             throw new NotImplementedException();
         }

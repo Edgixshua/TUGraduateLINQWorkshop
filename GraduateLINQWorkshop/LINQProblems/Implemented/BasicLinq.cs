@@ -23,7 +23,7 @@ namespace LINQProblems.Implemented
 
             foreach (var person in people)
             {
-                if (person.Age > age)
+                if (person.Age >= age)
                 {
                     peopleOlderThanAge.Add(person);
                 }
@@ -34,17 +34,15 @@ namespace LINQProblems.Implemented
 
         public static bool IncludesPersonWithName(List<Person> people, string name)
         {
-            var includesPersonList = new List<Person>();
-
             foreach (var person in people)
             {
                 if (person.FirstName == name)
                 {
-                    includesPersonList.Add(person);
+                    return true;
                 }
             }
 
-            return includesPersonList.Capacity > 0;
+            return false;
         }
 
         public static List<Person> OrderByAgeAscending(List<Person> people)
@@ -67,9 +65,24 @@ namespace LINQProblems.Implemented
 
         public static Person FindOldestPerson(List<Person> people)
         {
+            Person oldestPerson = null;
 
+            foreach (var person in people)
+            {
+                if (oldestPerson == null)
+                {
+                    oldestPerson = person;
+                }
+                else
+                {
+                    if (person.Age > oldestPerson.Age)
+                    {
+                        oldestPerson = person;
+                    }
+                }
+            }
 
-            throw new NotImplementedException();
+            return oldestPerson;
         }
 
         private class OrderDescending : IComparer<Person>

@@ -30,3 +30,7 @@ If you need any helps with these steps, ask one of the demonstrators or your fel
 ## Permissions errors accessing GitHub
 
 If you're struggling to access github to clone the code please ask one of the demonstrators for instructions on how to fix this
+
+## Help
+
+- You may find looking through the LINQ documentation on <https://docs.microsoft.com/en-us/dotnet/api/system.linq?view=netframework-4.8> (Enumerable -> Methods) useful

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace LINQProblems
 {
@@ -11,33 +12,25 @@ namespace LINQProblems
         }
 
         public static List<string> NamesOfPeopleOlderThan(List<Person> people, int age)
-        {
-            throw new NotImplementedException();
-        }
+            => people.Where(person => person.Age > age).Select(s => s.FirstName).ToList();
+
 
         public static int CalculateHowManyPeopleLiveIn(List<Person> people, string birthplace)
-        {
-            throw new NotImplementedException();
-        }
+            => people.Count(person => person.PlaceOfBirth == birthplace);
+
 
         public static IList<Person> FindPeopleWhosFavouriteColourIs(IEnumerable<Person> people, Colour favouriteColour)
-        {
-            throw new NotImplementedException();
-        }
+            => people.Where(person => person.FavouriteColour == favouriteColour).ToList();
+
 
         public static bool DoesSomeoneExistWhoIsOverAgeWithFavouriteColourOf(IEnumerable<Person> people, int age, Colour favouriteColour)
-        {
-            throw new NotImplementedException();
-        }
+            => people.Where(person => person.Age > age).Select(person => person.FavouriteColour == favouriteColour).Contains(true);
+
 
         public static IList<Person> PeopleWithOtherNames(IEnumerable<Person> people)
-        {
-            throw new NotImplementedException();
-        }
+            => people.Where(person => person.OtherNames?.Any() == true).ToList();
 
-        public static IEnumerable<Person> PeopleWithOtherNameOf(IEnumerable<Person> people)
-        {
-            throw new NotImplementedException();
-        }
+        public static IEnumerable<Person> PeopleWithOtherNameOf(IEnumerable<Person> people, string name)
+            => people.Where(person => person.OtherNames?.Any() == true).Where(s => s.OtherNames.Contains(name));
     }
 }

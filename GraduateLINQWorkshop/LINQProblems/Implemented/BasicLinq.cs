@@ -67,8 +67,6 @@ namespace LINQProblems.Implemented
 
         public static Person FindOldestPerson(List<Person> people)
         {
-
-
             throw new NotImplementedException();
         }
 

@@ -1,10 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace LINQProblems
 {
     public static class BasicLinq
     {
+        public static IEnumerable<int> GetNumberGreaterThan(IEnumerable<int> numbers, int greaterThan)
+            => numbers.Where(number => number > greaterThan);
+
+        public static IEnumerable<int> OrderNumbersAscending(IEnumerable<int> numbers)
+            => numbers.OrderBy(number => number);
+
         public static List<string> GetFirstNamesOfPeople(List<Person> people)
         {
             throw new NotImplementedException();

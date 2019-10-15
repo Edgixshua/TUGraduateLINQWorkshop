@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace LINQProblems
 {
@@ -28,7 +27,7 @@ namespace LINQProblems
             throw new NotImplementedException();
         }
 
-        public static List<Person> OrderByAgeDescdending(List<Person> people)
+        public static List<Person> OrderByAgeDescending(List<Person> people)
         {
             throw new NotImplementedException();
         }

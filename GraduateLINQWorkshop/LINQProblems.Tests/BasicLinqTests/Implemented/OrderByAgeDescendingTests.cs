@@ -1,7 +1,7 @@
 ﻿using FluentAssertions;
 using NUnit.Framework;
 
-namespace LINQProblems.Tests.BasicLinqTests
+namespace LINQProblems.Tests.BasicLinqTests.Implemented
 {
     [TestFixture]
     public class OrderByAgeDescendingTests
@@ -13,7 +13,7 @@ namespace LINQProblems.Tests.BasicLinqTests
             var people = TestData.NoPeople;
 
             //Act
-            var orderedPeople = BasicLinq.OrderByAgeDescending(people);
+            var orderedPeople = LINQProblems.Implemented.BasicLinq.OrderByAgeDescending(people);
 
             //Assert
             orderedPeople.Should().BeEmpty();
@@ -26,7 +26,7 @@ namespace LINQProblems.Tests.BasicLinqTests
             var people = TestData.AbbySmith;
 
             //Act
-            var orderedPeople = BasicLinq.OrderByAgeDescending(people);
+            var orderedPeople = LINQProblems.Implemented.BasicLinq.OrderByAgeDescending(people);
 
             //Assert
             orderedPeople.Should().BeInDescendingOrder(person => person.Age);
@@ -42,7 +42,7 @@ namespace LINQProblems.Tests.BasicLinqTests
             var people = TestData.LotsOfPeople;
 
             //Act
-            var orderedPeople = BasicLinq.OrderByAgeDescending(people);
+            var orderedPeople = LINQProblems.Implemented.BasicLinq.OrderByAgeDescending(people);
 
             //Assert
             orderedPeople.Should().BeInDescendingOrder(person => person.Age);

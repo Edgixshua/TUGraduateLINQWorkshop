@@ -1,51 +1,51 @@
 ﻿using FluentAssertions;
 using NUnit.Framework;
 
-namespace LINQProblems.Tests.BasicLinqTests
+namespace LINQProblems.Tests.BasicLinqTests.Implemented
 {
     [TestFixture]
-    public class OrderByAgeDescendingTests
+    public class OrderByAgeAscendingTests
     {
         [Test]
-        public void OrderByAgeDescending_EmptyList_ReturnsEmptyList()
+        public void OrderByAgeAscending_EmptyList_ReturnsEmptyList()
         {
             // Arrange
             var people = TestData.NoPeople;
 
             //Act
-            var orderedPeople = BasicLinq.OrderByAgeDescending(people);
+            var orderedPeople = LINQProblems.Implemented.BasicLinq.OrderByAgeAscending(people);
 
             //Assert
             orderedPeople.Should().BeEmpty();
         }
 
         [Test]
-        public void OrderByAgeDescending_AbbySmith_ReturnsAbbySmith()
+        public void OrderByAgeAscending_AbbySmith_ReturnsAbbySmith()
         {
             // Arrange
             var people = TestData.AbbySmith;
 
             //Act
-            var orderedPeople = BasicLinq.OrderByAgeDescending(people);
+            var orderedPeople = LINQProblems.Implemented.BasicLinq.OrderByAgeAscending(people);
 
             //Assert
-            orderedPeople.Should().BeInDescendingOrder(person => person.Age);
+            orderedPeople.Should().BeInAscendingOrder(person => person.Age);
             orderedPeople.Should().HaveCount(people.Count);
             //Equivalent to ignores order
             orderedPeople.Should().BeEquivalentTo(people);
         }
 
         [Test]
-        public void OrderByAgeDescending_LotsOfPeople_ReturnsOrderedList()
+        public void OrderByAgeAscending_LotsOfPeople_ReturnsOrderedList()
         {
             // Arrange
             var people = TestData.LotsOfPeople;
 
             //Act
-            var orderedPeople = BasicLinq.OrderByAgeDescending(people);
+            var orderedPeople = LINQProblems.Implemented.BasicLinq.OrderByAgeAscending(people);
 
             //Assert
-            orderedPeople.Should().BeInDescendingOrder(person => person.Age);
+            orderedPeople.Should().BeInAscendingOrder(person => person.Age);
             orderedPeople.Should().HaveCount(people.Count);
             //Equivalent to ignores order
             orderedPeople.Should().BeEquivalentTo(people);

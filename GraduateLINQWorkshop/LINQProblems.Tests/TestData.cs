@@ -26,7 +26,5 @@ namespace LINQProblems.Tests
             new Person("Jake", "Smith", new List<string> { "\n" }, new DateTime(1995, 3, 5), 18, Colour.Blue, "Nowhere"),
             new Person("Lenny", "Smith", new List<string> { "1231914=9123812=03&&&%%%" }, new DateTime(1990, 1, 5), 18, Colour.Blue, "Leeds")
         };
-
-        public static int[] Numbers { get; } = { 5, 1, 99, 45657, 0, 99999999, 567, -3432, 546, 3, -7 };
     }
 }

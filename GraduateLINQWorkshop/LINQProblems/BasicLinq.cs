@@ -8,34 +8,35 @@ namespace LINQProblems
     {
         public static List<string> GetFirstNamesOfPeople(List<Person> people)
         {
-            throw new NotImplementedException();
+            return people.Select(p => p.FirstName).ToList();
         }
 
         // This is an inclusive older than, e.g. someone with an age of 18 counts as being older
         // than a specified age of 18
         public static List<Person> GetPeopleOlderThan(List<Person> people, int age)
         {
-            throw new NotImplementedException();
+            return people.Where(p => p.Age >= age).ToList();
         }
 
         public static bool IncludesPersonWithName(List<Person> people, string name)
         {
-            throw new NotImplementedException();
+            var b = !(people.FirstOrDefault(p => p.FirstName.Equals(name)) == null);
+            return b;
         }
 
         public static List<Person> OrderByAgeAscending(List<Person> people)
         {
-            throw new NotImplementedException();
+            return people.OrderBy(p => p.Age).ToList();
         }
 
         public static List<Person> OrderByAgeDescending(List<Person> people)
         {
-            throw new NotImplementedException();
+            return people.OrderByDescending(p => p.Age).ToList();
         }
 
         public static Person FindOldestPerson(List<Person> people)
         {
-            throw new NotImplementedException();
+            return people.OrderByDescending(p => p.Age).FirstOrDefault();
         }
     }
 }

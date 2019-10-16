@@ -13,6 +13,8 @@ Please disable resharper if you have it enabled (it helps out too much to learn!
 There are 4 levels of difficulty - Basic (Implemented) - Basic - Intermediate - Advanced.
 It is suggested that you start with Basic, and if you're struggling, take a look at how they are implemented with loops in the Implemented section. After you have finished Basic move on to intermediate, then advanced.
 
+We also have some stress LINQ tests if you're interested in seeing how LINQ performs when working with hundreds of thousands of rows of data.
+
 ## Getting started
 
 If you need any helps with these steps, ask one of the demonstrators or your fellow associates

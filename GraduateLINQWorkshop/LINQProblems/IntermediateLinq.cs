@@ -12,25 +12,37 @@ namespace LINQProblems
         }
 
         public static List<string> NamesOfPeopleOlderThan(List<Person> people, int age)
-            => people.Where(person => person.Age > age).Select(s => s.FirstName).ToList();
+        {
+            throw new NotImplementedException();
+        }
 
 
         public static int CalculateHowManyPeopleLiveIn(List<Person> people, string birthplace)
-            => people.Count(person => person.PlaceOfBirth == birthplace);
+        {
+            throw new NotImplementedException();
+        }
 
 
         public static IList<Person> FindPeopleWhosFavouriteColourIs(IEnumerable<Person> people, Colour favouriteColour)
-            => people.Where(person => person.FavouriteColour == favouriteColour).ToList();
+        {
+            throw new NotImplementedException();
+        }
 
 
         public static bool DoesSomeoneExistWhoIsOverAgeWithFavouriteColourOf(IEnumerable<Person> people, int age, Colour favouriteColour)
-            => people.Where(person => person.Age > age).Select(person => person.FavouriteColour == favouriteColour).Contains(true);
+        {
+            throw new NotImplementedException();
+        }
 
 
         public static IList<Person> PeopleWithOtherNames(IEnumerable<Person> people)
-            => people.Where(person => person.OtherNames?.Any() == true).ToList();
+        {
+            throw new NotImplementedException();
+        }
 
         public static IEnumerable<Person> PeopleWithOtherNameOf(IEnumerable<Person> people, string name)
-            => people.Where(person => person.OtherNames?.Any() == true).Where(s => s.OtherNames.Contains(name));
+        {
+            throw new NotImplementedException();
+        }
     }
 }

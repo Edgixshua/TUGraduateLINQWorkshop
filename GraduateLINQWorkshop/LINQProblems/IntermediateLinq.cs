@@ -8,41 +8,41 @@ namespace LINQProblems
     {
         public static List<Person> CombinePeople(List<Person> people, List<Person> otherPeople)
         {
-            throw new NotImplementedException();
+            return people.Union(otherPeople).ToList();
         }
 
         public static List<string> NamesOfPeopleOlderThan(List<Person> people, int age)
         {
-            throw new NotImplementedException();
+            return people.Where(p => p.Age >= age).Select(p => p.FirstName).ToList();
         }
 
 
         public static int CalculateHowManyPeopleLiveIn(List<Person> people, string birthplace)
         {
-            throw new NotImplementedException();
+            return people.Count(p => p.PlaceOfBirth.Equals(birthplace));
         }
 
 
         public static IList<Person> FindPeopleWhosFavouriteColourIs(IEnumerable<Person> people, Colour favouriteColour)
         {
-            throw new NotImplementedException();
+            return people.Where(p => p.FavouriteColour.Equals(favouriteColour)).ToList();
         }
 
 
         public static bool DoesSomeoneExistWhoIsOverAgeWithFavouriteColourOf(IEnumerable<Person> people, int age, Colour favouriteColour)
         {
-            throw new NotImplementedException();
+            return people.Any(p => p.Age >= age && p.FavouriteColour.Equals(favouriteColour));
         }
 
 
         public static IList<Person> PeopleWithOtherNames(IEnumerable<Person> people)
         {
-            throw new NotImplementedException();
+            return people.Where(p => p.OtherNames!=null && p.OtherNames.Count>0).ToList();
         }
 
         public static IEnumerable<Person> PeopleWithOtherNameOf(IEnumerable<Person> people, string name)
         {
-            throw new NotImplementedException();
+            return people.Where(p => p.OtherNames != null &&  p.OtherNames.Contains(name));
         }
     }
 }

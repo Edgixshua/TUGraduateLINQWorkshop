@@ -20,8 +20,7 @@ namespace LINQProblems
 
         public static bool IncludesPersonWithName(List<Person> people, string name)
         {
-            var b = !(people.FirstOrDefault(p => p.FirstName.Equals(name)) == null);
-            return b;
+            return people.Any(p => p.FirstName.Equals(name));
         }
 
         public static List<Person> OrderByAgeAscending(List<Person> people)

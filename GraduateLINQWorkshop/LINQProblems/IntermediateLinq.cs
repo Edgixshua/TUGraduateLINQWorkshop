@@ -19,13 +19,13 @@ namespace LINQProblems
 
         public static int CalculateHowManyPeopleLiveIn(List<Person> people, string birthplace)
         {
-            return people.Count(p => p.PlaceOfBirth.Equals(birthplace));
+            return people.Count(p => p.PlaceOfBirth==(birthplace));
         }
 
 
         public static IList<Person> FindPeopleWhosFavouriteColourIs(IEnumerable<Person> people, Colour favouriteColour)
         {
-            return people.Where(p => p.FavouriteColour.Equals(favouriteColour)).ToList();
+            return people.Where(p => p.FavouriteColour == (favouriteColour)).ToList();
         }
 
 

@@ -13,8 +13,8 @@ namespace LINQProblems
 
         public static IList<string> FindFirstNamesWhichExistInBothLists(IEnumerable<Person> people, IEnumerable<Person> otherPeople)
         {
-            return people.Where(p => otherPeople.Any(o => o.FirstName.Equals(p.FirstName))).Select(s => s.FirstName).ToList();
-            //return people.Intersect(otherPeople,new IEqualityComparer())
+            //return people.Where(p => otherPeople.Any(o => o.FirstName.Equals(p.FirstName))).Select(s => s.FirstName).ToList();
+            return people.Select(p => p.FirstName).Intersect(otherPeople.Select(p => p.FirstName)).ToList();
 
         }
 
@@ -25,7 +25,7 @@ namespace LINQProblems
 
         public static int FindTotalAgeOfAllPeople(IEnumerable<Person> people)
         {
-            return people.Select(p => p.Age).Sum();
+            return people.Sum(p => p.Age);
         }
 
         // Look at the tests for the output format   "Abby, Olivia, Smith\n"

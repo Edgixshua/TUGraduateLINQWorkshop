@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using AutoFixture;
 
 namespace LINQProblems.Tests
 {
@@ -26,5 +28,14 @@ namespace LINQProblems.Tests
             new Person("Jake", "Smith", new List<string> { "\n" }, new DateTime(1995, 3, 5), 18, Colour.Blue, "Nowhere"),
             new Person("Lenny", "Smith", new List<string> { "1231914=9123812=03&&&%%%" }, new DateTime(1990, 1, 5), 18, Colour.Blue, "Leeds")
         };
+
+        public static List<Person> AllThePeople { get; } = CreatePeople();
+
+        private static List<Person> CreatePeople()
+        {
+            var fixture = new Fixture();
+
+            return fixture.CreateMany<Person>(100000).ToList();
+        }
     }
 }

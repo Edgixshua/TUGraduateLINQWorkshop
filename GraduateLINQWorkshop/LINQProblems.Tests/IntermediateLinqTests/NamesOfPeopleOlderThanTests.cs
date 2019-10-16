@@ -48,7 +48,7 @@ namespace LINQProblems.Tests.IntermediateLinqTests
         }
 
         [Test]
-        public void NamesOfPeopleOlderThanTwenty_LotsOfPeople_ReturnsCorrectPeople()
+        public void NamesOfPeopleOlderThanTwentyFive_LotsOfPeople_ReturnsCorrectPeople()
         {
             // Arrange
             const int expectedCount = 6;

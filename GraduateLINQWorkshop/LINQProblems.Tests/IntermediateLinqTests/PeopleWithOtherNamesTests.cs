@@ -31,7 +31,8 @@ namespace LINQProblems.Tests.IntermediateLinqTests
             var peopleWithOtherNames = IntermediateLinq.PeopleWithOtherNames(people);
 
             //Assert
-            peopleWithOtherNames.Should().BeEmpty();
+            peopleWithOtherNames.Should().HaveCount(1);
+            peopleWithOtherNames.Should().BeEquivalentTo(TestData.AbbySmith);
         }
 
         [Test]

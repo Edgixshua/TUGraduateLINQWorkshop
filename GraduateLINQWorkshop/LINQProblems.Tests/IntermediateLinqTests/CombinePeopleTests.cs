@@ -8,7 +8,7 @@ namespace LINQProblems.Tests.IntermediateLinqTests
     public class CombinePeopleTests
     {
         [Test]
-        public void CombinePeople_EmptyLists_ReturnsNull()
+        public void CombinePeople_EmptyLists_ReturnsEmptyList()
         {
             // Arrange
             var firstList = TestData.NoPeople;
@@ -18,7 +18,7 @@ namespace LINQProblems.Tests.IntermediateLinqTests
             var combinedPeople = IntermediateLinq.CombinePeople(firstList, secondList);
 
             //Assert
-            combinedPeople.Should().BeNull();
+            combinedPeople.Should().BeEmpty();
         }
 
         [Test]

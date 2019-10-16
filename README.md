@@ -17,7 +17,7 @@ We also have some stress LINQ tests if you're interested in seeing how LINQ perf
 
 ## Getting started
 
-If you need any helps with these steps, ask one of the demonstrators or your fellow associates
+If you need any help with these steps, ask one of the demonstrators or your fellow associates
 
 - Clone the code (`git clone https://github.com/Edgixshua/TUGraduateLINQWorkshop.git`) into your source folder
 - Create a branch and check it out (

@@ -35,12 +35,10 @@ namespace LINQProblems
             var firstnames = people.Select(p => p.FirstName).ToList();
             var othernames = people.Select(p => p.OtherNames).ToList();
             var lastnames = people.Select(p => p.LastName).ToList();
-
             string result = "";
             for (int i = 0; i < people.Count(); i++)
             {
                 result += firstnames[i] + ", ";
-
                 if (people.ElementAt(i).OtherNames != null)
                 {
                     foreach (string s in othernames[i])
@@ -48,10 +46,8 @@ namespace LINQProblems
                         result += s + ", ";
                     }
                 }
-
                 result += lastnames[i] + "\n";
             }
-
             return result;
 
         }

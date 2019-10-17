@@ -17,9 +17,11 @@ namespace LINQProblems
         // than a specified age of 18
         public static List<Person> GetPeopleOlderThan(List<Person> people, int age)
         {
-            var query = people.Where(n => n.Age >= age).Select(n => n);
+            var query = people.Where(n => n.Age >= age);
 
             return query.ToList();
+
+            //Select unecessary
         }
 
         public static bool IncludesPersonWithName(List<Person> people, string name)
@@ -41,11 +43,12 @@ namespace LINQProblems
             var query = people.OrderByDescending(n => n.Age);
 
             return query.ToList();
+
         }
 
         public static Person FindOldestPerson(List<Person> people)
         {
-            var query = people.OrderByDescending(n => n.Age).FirstOrDefault();
+            var query = OrderByAgeDescending(people).FirstOrDefault();
 
             return query;
         }

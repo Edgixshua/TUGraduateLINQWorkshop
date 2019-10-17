@@ -12,6 +12,8 @@ namespace LINQProblems
             var query = people.Union(otherPeople).ToList();
 
             return query;
+
+            //Union returns a distinct combination of both lists, Concat returns all the values in both lists
         }
 
         public static List<string> NamesOfPeopleOlderThan(List<Person> people, int age)
@@ -26,7 +28,7 @@ namespace LINQProblems
 
         public static int CalculateHowManyPeopleLiveIn(List<Person> people, string birthplace)
         {
-            var query = people.Where(n => n.PlaceOfBirth == birthplace).Count();
+            var query = people.Count(n => n.PlaceOfBirth == birthplace);
 
             return query;
         }
@@ -42,7 +44,7 @@ namespace LINQProblems
 
         public static bool DoesSomeoneExistWhoIsOverAgeWithFavouriteColourOf(IEnumerable<Person> people, int age, Colour favouriteColour)
         {
-            var query = people.Where(n => n.Age >= age && n.FavouriteColour == favouriteColour).Any();
+            var query = people.Any(n => n.Age >= age && n.FavouriteColour == favouriteColour);
 
             return query;
         }
@@ -57,9 +59,11 @@ namespace LINQProblems
 
         public static IEnumerable<Person> PeopleWithOtherNameOf(IEnumerable<Person> people, string name)
         {
-            var query = people.Where(n => n.OtherNames != null && n.OtherNames.Count() != 0 && n.OtherNames.Contains(name));
+            var query = PeopleWithOtherNames(people).Where(n => n.OtherNames.Contains(name));
 
             return query;
+
+            //Contains makes the .Count() redundant
         }
     }
 }

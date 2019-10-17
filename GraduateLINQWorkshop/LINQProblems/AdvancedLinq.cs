@@ -8,26 +8,17 @@ namespace LINQProblems
     {
         public static IList<Colour> FindAllFavouriteColours(IEnumerable<Person> people)
         {
-            var query = people
-                .Select(p => p.FavouriteColour)
-                .Distinct()
-                .ToList();
+            var query = people.Select(p => p.FavouriteColour).Distinct().ToList();
 
             return query;
         }
 
         public static IList<string> FindFirstNamesWhichExistInBothLists(IEnumerable<Person> people, IEnumerable<Person> otherPeople)
         {
-            var query = people.Intersect(otherPeople)
-                .Distinct()
-                .Select(p => p.FirstName)
+            var query = people.Select(p => p.FirstName).Intersect(otherPeople.Select(o => o.FirstName))
                 .ToList();
 
-            
-
             return query;
-
-            //Didn't pass these two tests
         }
 
         public static IDictionary<string, Colour> CreateDictionaryOfNameToFavouriteColour(IEnumerable<Person> people)
@@ -39,18 +30,23 @@ namespace LINQProblems
 
         public static int FindTotalAgeOfAllPeople(IEnumerable<Person> people)
         {
-            var query = people.Select(p => p.Age).ToList();
+            var query = people.Select(p => p.Age).ToList().Sum();
 
-            var total = query.Sum();
-
-            return total;
+            return query;
         }
 
         // Look at the tests for the output format
         // This one is tricky!
         public static string NamesWithOtherNamesIncluded(IEnumerable<Person> people)
         {
-            var query = people.Where(n => n.OtherNames != null && n.OtherNames.Count() != 0).Select(n => new { n.FirstName, n.OtherNames, n.LastName }).GroupBy(p => p.FirstName).OrderBy(g => g.Key).ToString();
+            var query = people.Where(n => n.OtherNames != null && n.OtherNames.Count() != 0).Select(n => new { n.FirstName, n.OtherNames, n.LastName }).Distinct().ToString();
+
+            //var PeopleList = new List<Person>();
+
+            //foreach (var person in query)
+            //{
+            //    PeopleList.Add(person);
+            //}
 
             return query;
 

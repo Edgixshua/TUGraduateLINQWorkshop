@@ -42,7 +42,19 @@ namespace LINQProblems.Tests.AdvancedLinqTests
             var result = AdvancedLinq.NamesWithOtherNamesIncluded(people);
 
             // Assert
-            result.Should().Be("Abby, Olivia, Smith\nBob, Humphrey\nCharlie, Paul\nDani, Holmes, Reed, Hayes\nEllie, Hunt, Ball\nFelicity, Plott\nGeorge, Olivia, Hayes\nHannah, Nelson, Hunt, Reed, Baller\nIsmail, Francis, , Ray\nJake,\n, Smith\nLenny, 1231914=9123812=03&&&%%%, Smith\n");
+            result.Trim().Should().Be(@"Abby, Olivia, Smith
+Bob, Humphrey
+Charlie, Paul
+Dani, Holmes, Reed, Hayes
+Ellie, Hunt, Ball
+Felicity, Plott
+George, Olivia, Hayes
+Hannah, Nelson, Hunt, Reed, Baller
+Ismail, Francis, , Ray
+Jake, 
+, Smith
+Lenny, 1231914=9123812=03&&&%%%, Smith
+");
         }
     }
 }

@@ -29,7 +29,9 @@ namespace LINQProblems.Tests
             new Person("Lenny", "Smith", new List<string> { "1231914=9123812=03&&&%%%" }, new DateTime(1990, 1, 5), 18, Colour.Blue, "Leeds")
         };
 
-        public static List<Person> AllThePeople { get; } = CreatePeople();
+        public static List<Person> AllThePeople => _allThePeople.Value;
+
+        private static readonly Lazy<List<Person>> _allThePeople = new Lazy<List<Person>>(CreatePeople);
 
         private static List<Person> CreatePeople()
         {

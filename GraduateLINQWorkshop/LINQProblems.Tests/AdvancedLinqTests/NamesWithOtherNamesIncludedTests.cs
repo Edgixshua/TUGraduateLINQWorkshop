@@ -42,7 +42,8 @@ namespace LINQProblems.Tests.AdvancedLinqTests
             var result = AdvancedLinq.NamesWithOtherNamesIncluded(people);
 
             // Assert
-            result.Should().Be(@"Abby, Olivia, Smith
+            result.Trim().Should().Be(
+                @"Abby, Olivia, Smith
 Bob, Humphrey
 Charlie, Paul
 Dani, Holmes, Reed, Hayes
@@ -53,8 +54,7 @@ Hannah, Nelson, Hunt, Reed, Baller
 Ismail, Francis, , Ray
 Jake, 
 , Smith
-Lenny, 1231914=9123812=03&&&%%%, Smith
-");
+Lenny, 1231914=9123812=03&&&%%%, Smith");
         }
     }
 }

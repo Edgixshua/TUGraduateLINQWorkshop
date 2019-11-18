@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace LINQProblems
 {
@@ -29,7 +30,17 @@ namespace LINQProblems
         // This one is tricky!
         public static string NamesWithOtherNamesIncluded(IEnumerable<Person> people)
         {
-            throw new NotImplementedException();
+            return people.Aggregate("", (s, person) => s + $"{person.FirstName}, {ProcessOtherNames(person.OtherNames)}{person.LastName}\n");
+        }
+
+        private static string ProcessOtherNames(List<string> othernames)
+        {
+            if (othernames?.Any() != true)
+            {
+                return "";
+            }
+
+            return string.Join(", ", othernames) + ", ";
         }
     }
 }

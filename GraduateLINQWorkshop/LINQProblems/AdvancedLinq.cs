@@ -42,5 +42,17 @@ namespace LINQProblems
 
             return string.Join(", ", othernames) + ", ";
         }
+
+        public static IEnumerable<string> SelectAllMiddleNames(IEnumerable<Person> people)
+        {
+            return people.SelectMany(p => p.OtherNames);
+        }
+
+        public static IList<string> SelectCombinationsOfSingleMiddleNames(IEnumerable<Person> people)
+        {
+            return people
+                .Where(p => p.OtherNames?.Any() == true)
+                .SelectMany(p => p.OtherNames, (p, otherName) => $"{p.FirstName}, {otherName}, {p.LastName}").ToList();
+        }
     }
 }
